@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Orbital Command
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visual, space-themed task dashboard for Notion. Tasks orbit around your focus center like satellites around a planet.
 
-Currently, two official plugins are available:
+![Orbital Command Screenshot](https://via.placeholder.com/800x400/0f172a/6366f1?text=Orbital+Command+Preview)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Orbital Visualization**: Tasks orbit at different distances based on priority (P0-P3)
+- **Priority-based Colors**: Critical tasks glow red, high priority amber, normal green, low gray
+- **Interactive Hover**: See task details on hover
+- **Filter System**: Filter by priority level
+- **Live Clock**: Shows current time and date
+- **Statistics Dashboard**: Quick overview of task completion status
+- **Glassmorphism UI**: Modern, beautiful design with backdrop blur effects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS v4
+- Cloudflare Pages (deployment)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Local Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## Deployment
+
+This project deploys to Cloudflare Pages. The GitHub Actions workflow handles automatic deployment on push to main.
+
+Required secrets:
+- `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token with Pages deployment permissions
+- `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+
+## Future Enhancements
+
+- [ ] Real-time Notion API integration
+- [ ] Drag-and-drop task reordering
+- [ ] Custom orbit animations
+- [ ] Task completion from UI
+- [ ] Mobile-responsive layout
+
+## License
+
+MIT
