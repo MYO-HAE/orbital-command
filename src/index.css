@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-orbit-1: orbit1 20s linear infinite;
+  --animate-orbit-2: orbit2 25s linear infinite;
+  --animate-orbit-3: orbit3 30s linear infinite;
+  --animate-orbit-4: orbit4 35s linear infinite;
+  --animate-pulse-glow: pulseGlow 2s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes orbit1 {
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbit2 {
+  0% { transform: rotate(90deg) translateX(180px) rotate(-90deg); }
+  100% { transform: rotate(450deg) translateX(180px) rotate(-450deg); }
+}
+
+@keyframes orbit3 {
+  0% { transform: rotate(180deg) translateX(240px) rotate(-180deg); }
+  100% { transform: rotate(540deg) translateX(240px) rotate(-540deg); }
+}
+
+@keyframes orbit4 {
+  0% { transform: rotate(270deg) translateX(300px) rotate(-270deg); }
+  100% { transform: rotate(630deg) translateX(300px) rotate(-630deg); }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); }
+  100% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.8), 0 0 60px rgba(168, 85, 247, 0.4); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+body {
+  background-color: #020617;
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
